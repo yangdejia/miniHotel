@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/employee.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../css/bootstrap.css" />
+		<link rel="stylesheet" href="../../css/animate.css" />
+        <link rel="stylesheet" href="../../font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="../../css/style.css" />
+		<link rel="shortcut icon" href="../../img/icon.png" />
+		<!-- InstanceBeginEditable name="doctitle" -->
+		<title>Traveler management</title>
+		<!-- InstanceEndEditable -->
+		<script src="../../js/jquery-3.1.1.min.js"></script>
+		<script src="../../js/bootstrap.js"></script>
+		<script src="../../js/jquery.singlePageNav.min.js"></script>
+		<script src="../../js/wow.min.js"></script>
+        <script src="../../js/style.js"></script>
+		<!-- InstanceBeginEditable name="head" -->  
+        <link rel="stylesheet" href="add.css" />
+        <script src="add.js"></script>
+		<!-- InstanceEndEditable -->
+	</head>
+	<body>
+    <div id="logo">
+        <div class="container">
+            <h3 class="pull-left">Hotel Management System(<span id="shopName" style="font-size:0.7em"></span>)</h3>
+            <!-- <div id="time"></div> -->
+        </div>
+    </div>
+        <nav class="navbar navbar-inverse" id="nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Hotel Management System</a>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                    <!-- InstanceBeginEditable name="menu" -->
+                       <li>
+                            <a href="../index.html"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a>
+                        </li>
+                        <li>
+                            <a href="../person/index.html"><i class="fa fa-desktop"></i>&nbsp;&nbsp;Personal Information</a>
+                        </li>
+                        <li class="active">
+                            <a href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;Traveler management</a>
+                        </li>
+                        <li>
+                            <a href="../accom/index.html"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Accommodation management</a>
+                        </li>
+                        <li>
+                            <a href="../room/index.html"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Room Information Sheet</a>
+                        </li>
+                        <!-- InstanceEndEditable -->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="" class="dropdown" data-toggle="dropdown">Current user：<span id="userInfo" ></span>&nbsp;&nbsp;<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:exit(0);"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;quit</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<div id="alert">
+    <div class="container">
+        <div class="alert fade in">
+            <button class="close" data-dismiss="alert" onClick="javascript:hiddenAlert();">&times;</button>
+            <p class="lead">Hotel Management System</p>
+            <p>Current version of the program (V1.0)</p>
+            <p>We provide you with convenient and fast operation to effectively improve the efficiency of information management。</p>
+            <p>We will always be your loyal partner in the future, and it is your best choice.</p>
+            <p><i class="fa fa-phone"></i>&nbsp;:&nbsp;tel：131XXXX7380</p>
+            <p><i class="fa fa-envelope"></i>&nbsp;:&nbsp;Email：1626XXX710@qq.com</p>
+        </div>
+    </div>
+</div>
+         <!-- InstanceBeginEditable name="content" -->
+   <div id="content">
+<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="list-group">
+						<a href="index.html" class="list-group-item">Traveler list</a>
+						<a href="#" class="list-group-item active">Traveler registration</a>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div class="page-header">
+						<h4>Traveler registration</h4>
+					</div>
+					<ul class="nav nav-tabs">
+						<li>
+							<a href="index.html">Traveler list</a>
+						</li>
+						<li class="active">
+							<a href="#">Traveler registration</a>
+						</li>
+					</ul>
+                    <br>
+                    <form class="form-horizontal login-form">
+                            <div class="form-group">
+                                <label for="name" class="col-md-3 col-sm-3 col-xs-3">name：</label>
+                                <input type="text" class="col-md-9 col-sm-9 col-xs-9" id="name" placeholder="Please enter the traveler name">
+                            </div>
+                            <div class="form-group">
+                                <label for="age" class="col-md-3 col-sm-3 col-xs-3">age：</label>
+                                <input type="text" class="col-md-9 col-sm-9 col-xs-9" id="age" placeholder="Please enter the traveler age">
+                            </div>
+                             <div class="form-group">
+                                <label for="sex" class="col-md-3 col-sm-3 col-xs-3">sex：</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="sex" value="man" checked>man
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="sex" value="woman">woman
+                                    </label>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label for="idcard" class="col-md-3 col-sm-3 col-xs-3">Identification number：</label>
+                                <input type="text" class="col-md-9 col-sm-9 col-xs-9" id="idcard" placeholder="Please enter your traveler ID number">
+                            </div>
+                            <div class="form-group">
+                                <label for="tel" class="col-md-3 col-sm-3 col-xs-3">Contact number：</label>
+                                <input type="text" class="col-md-9 col-sm-9 col-xs-9" id="tel" placeholder="Please enter the traveler's contact number">
+                            </div>
+                            <div class="form-group">
+                                <label for="remark" class="col-md-3 col-sm-3 col-xs-3">remark：</label>
+                                <textarea type="text" class="col-md-9 col-sm-9 col-xs-9" id="remark" placeholder="Additional Notes:"></textarea>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-success" onClick="javascript:addPass();">Are you sure</button>&nbsp;
+                                 <button type="button" class="btn btn-primary" onClick="javascript:window.location.href='index.html'">Cancel</button>
+                            </div>
+                        </form>		
+						
+				</div>
+			</div>
+		</div>
+    </div>
+          <!-- InstanceEndEditable -->
+<div id="listMenu">
+    <div class="listMenu-list">	
+        <a href="javascript:showTel();" class="list-tooltip" data-toggle="tooltip" data-placement="left" title="contact"><i class="fa fa-phone"></i></a>
+        <div class="panel panel-default" id="telWay">
+            <div class="panel-heading">
+                <h3 class="panel-title">If you have any questions and need help, please contact us：</h3>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    tel：131XXXX7380<span class="pull-right"><i class="fa fa-phone"></i></span>
+                </li>
+                <li class="list-group-item">
+                    Email：1626XXX710@qq.com<span class="pull-right"><i class="fa fa-envelope"></i></span>
+                </li>
+            </ul>
+        </div>
+        <a href="javascript:exit(0);" class="list-tooltip" data-toggle="tooltip" data-placement="left" title="quit"><i class="fa fa-sign-out"></i></a>
+    </div>
+    <a href="#" class="list-btn">+</a>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body clearfix" id="myModalBody">
+                
+            </div>
+            <div class="modal-footer" id="myModalFooter">
+               
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+	</body>
+    <script>
+    	$(function(){
+			init();
+		})
+    </script>
+<!-- InstanceEnd --></html>

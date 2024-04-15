@@ -1,0 +1,225 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+<title>Mini Hotel Management System Login</title>
+
+<link rel="stylesheet" href="css/login.css">
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/html5shiv.js"></script>
+<script type="text/javascript" src="js/style.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+</head>
+<body>
+<div class="main">
+	<div class="container-fluid">
+    	<div class="row">
+            <div class="main-nav clearfix">
+            	<div class="container">
+	            	<div class="navbar-brand"><strong style="font-size:25px">Hotel Management System</strong></div>
+		                <ul class="nav nav-tabs  navbar-right">
+		                    <li class="active"><a href="#login-epm"  data-toggle="tab"><span>Staff Login</span></a></li>
+		                    <li><a href="#login-admin" data-toggle="tab"><span>Administrator Login</span></a></li>
+		                    <li><a href="#bookerModal"  data-toggle="modal"><span>Bookers Login</span></a></li>
+		                    <li><a href="#registerModal"  data-toggle="modal"><span>Register</span></a></li>
+		                </ul>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12" id="main-content">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="login-epm">  
+                       <div class="login">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 col-xs-12 login-hello">
+										<h4> Hotel Management System </h4>
+										<p> Welcome to the <i class="fa fa-star"></i> Hotel management system. </p>
+										<p> We provide you with convenient and quick operation, effectively improve the efficiency of information management </p>
+										<p> rate. In the future will always be your loyal partner, is your choice. </p>
+									</div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="login-form">
+                                            <h4>Staff Login</h4>
+                                            <form class="form">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Please enter your login name" id="stafflogin" name="login" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control" placeholder="Please enter password" id="staffpwd" name="pwd" required>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" id="remember" name="remember">Remember password
+                                                        </label>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="button" class="btn btn-success" onclick="javascript:staffLogin(0);">Login</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                    <div class="tab-pane fade" id="login-admin">
+                       <div class="login">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 col-xs-12 login-hello">
+										<h4> Hotel Management System </h4>
+										<p> Welcome to the <i class="fa fa-star"></i> Hotel management system. </p>
+										<p> We provide you with convenient and quick operation, effectively improve the efficiency of information management </p>
+										<p> rate. In the future will always be your loyal partner, is your choice. </p>
+									</div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="login-form">
+                                            <h4>Administrator Login</h4>
+                                            <form class="form">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Please enter your login name" id="adminlogin" name="login" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control" placeholder="Please enter password" id="adminpwd" name="adminpwd" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" id="adminremember" name="remember">Remember password
+                                                        </label>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="button" class="btn btn-success" onclick="javascript:staffLogin(1);">Login</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--tab-pane END-->
+                </div>   
+             </div><!--tab-content END-->
+         </div>
+	</div>
+</div>
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Register</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form">
+                	<div class="form-group input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-user-o"></i>
+                        </span>
+                        <select class="form-control" id="regType">
+                        	<option value="0" selected>Staff</option>
+                        	<option value="1">Administrator</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <!-- UserName -->
+                        <input type="text" class="form-control" id="loginname" placeholder="Please enter login name" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- Telphone -->
+                        <input type="tel" class="form-control" id="username" placeholder="Please enter your name" required>
+                    </div>
+                    <div class="form-group input-group">
+                        <!-- Password -->
+                        <input type="password" class="form-control" id="userpwd" placeholder="Please set password" required>
+                         <span class="input-group-addon">
+                            <i class="fa fa-key"></i>
+                        </span>
+                    </div>
+                    <div class="form-group input-group">
+                        <!-- Confirm Password  -->
+                        <input type="password" class="form-control" id="userpwd2" placeholder="Please enter your password again" required>
+                         <span class="input-group-addon">
+                            <i class="fa fa-key"></i>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-primary" onclick="javascript:register();">Regist</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="bookerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="modal-body">
+                  <form class="form">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder="Please enter your login name" id="bookerlogin" name="login" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control" placeholder="Please enter password" id="bookerpwd" name="pwd" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" id="remember" name="remember">Remember password
+                                                        </label>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="button" class="btn btn-success" onclick="javascript:staffLogin(2);">Login</button>
+                                                </div>
+
+                                            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- InstanceEndEditable -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body clearfix" id="myModalBody">
+                
+            </div>
+            <div class="modal-footer" id="myModalFooter">
+               
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		init();
+	})
+</script>
+</html>
+
